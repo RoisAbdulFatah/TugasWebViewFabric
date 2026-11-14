@@ -47,7 +47,7 @@ Aplikasi memanfaatkan library `react-native-webview` untuk menampilkan halaman l
 
 **Tampilan**
 
-<img src="Screenshots/Fabric-Web-View.jpeg" alt="Desain Tugas 2 di MIT App Inventor" width="500">
+<img src="Screenshots/Fabric-Web-View.jpeg" alt="Desain Tugas 2 di MIT App Inventor" width="400">
 
 ### Fitur Aplikasi
 

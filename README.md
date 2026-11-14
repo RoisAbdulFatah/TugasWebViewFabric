@@ -1,97 +1,170 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
-# Getting Started
+# Tugas Pemrograman Mobile: Implementasi WebView
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+Repositori ini berisi hasil pengerjaan tugas mata kuliah Pemrograman Mobile yang berfokus pada penerapan teknologi **WebView** untuk menampilkan halaman website di dalam aplikasi Android.
 
-## Step 1: Start Metro
+Terdapat dua implementasi menggunakan teknologi pengembangan aplikasi yang berbeda, yaitu MIT App Inventor dan React Native dengan dukungan Fabric (New Architecture).
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+## Daftar Tugas
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+| Tugas   | Teknologi                           | Lokasi Proyek              |
+| ------- | ----------------------------------- | -------------------------- |
+| Tugas 2 | MIT App Inventor (WebViewer)        | `MIT_App_Inventor_Tugas2/` |
+| Tugas 3 | React Native CLI + Fabric + WebView | Direktori utama repositori |
 
-```sh
-# Using npm
+---
+
+## Tugas 2: Implementasi WebView dengan MIT App Inventor
+
+Tugas ini merupakan pengembangan aplikasi Android sederhana menggunakan platform MIT App Inventor. Fitur utama aplikasi memanfaatkan komponen **WebViewer** untuk membuka dan menampilkan halaman website secara langsung melalui aplikasi.
+
+### Cara Membuka Proyek
+
+1. Akses [MIT App Inventor](https://ai2.appinventor.mit.edu/).
+2. Login menggunakan akun Google.
+3. Masuk ke menu **Projects**.
+4. Pilih **Import project (.aia) from my computer**.
+5. Pilih file proyek MIT App Inventor yang tersedia di dalam folder `MIT_App_Inventor_Tugas2/`.
+6. Setelah berhasil diimpor, proyek dapat dijalankan melalui:
+   - **Connect > AI Companion** untuk mencoba aplikasi secara langsung menggunakan HP.
+   - **Build > Android App (.apk)** untuk membuat file instalasi Android.
+
+---
+
+## Tugas 3: Implementasi WebView dengan React Native (Fabric)
+
+Pada tugas ini, aplikasi dikembangkan menggunakan **React Native CLI** dengan mengaktifkan New Architecture yang mendukung sistem rendering Fabric.
+
+Aplikasi memanfaatkan library `react-native-webview` untuk menampilkan halaman login portal akademik Universitas Langlangbuana (UNLA), sehingga pengguna dapat mengakses portal tersebut langsung dari aplikasi Android.
+
+### Fitur Aplikasi
+
+- Menampilkan header dengan identitas aplikasi dan nama pengembang.
+- Memuat halaman portal akademik SIAKAD UNLA melalui WebView.
+- Mengaktifkan JavaScript agar halaman website dapat berjalan dengan baik.
+- Menggunakan SafeAreaView untuk mengatur area tampilan aplikasi.
+- Mengimplementasikan Fabric melalui React Native New Architecture.
+
+### Teknologi yang Digunakan
+
+| Teknologi            | Versi / Keterangan |
+| -------------------- | ------------------ |
+| React Native         | 0.87.1             |
+| React                | 19.2.3             |
+| TypeScript           | TypeScript 6       |
+| react-native-webview | ^14.0.1            |
+| React Native CLI     | 20.2.0             |
+| Fabric               | New Architecture   |
+| Hermes               | Aktif              |
+
+### Persyaratan Sistem
+
+Sebelum menjalankan aplikasi, siapkan beberapa perangkat lunak berikut:
+
+- Node.js versi minimal 22.11.0.
+- npm.
+- JDK 17.
+- Android Studio atau Android SDK.
+- Android Emulator atau HP Android dengan USB Debugging aktif.
+
+### Cara Menjalankan Proyek
+
+**1. Clone repositori**
+
+Buka terminal atau CMD, kemudian jalankan:
+
+```bash
+git clone https://github.com/RoisAbdulFatah/TugasWebViewFabric.git
+```
+
+**2. Masuk ke direktori proyek**
+
+```bash
+cd TugasWebViewFabric
+```
+
+**3. Instal seluruh dependency**
+
+```bash
+npm install
+```
+
+**4. Jalankan Metro Bundler**
+
+Buka terminal pertama dan jalankan:
+
+```bash
 npm start
-
-# OR using Yarn
-yarn start
 ```
 
-## Step 2: Build and run your app
+**5. Jalankan aplikasi Android**
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+Buka terminal kedua pada direktori proyek yang sama, kemudian jalankan:
 
-### Android
-
-```sh
-# Using npm
+```bash
 npm run android
-
-# OR using Yarn
-yarn android
 ```
 
-### iOS
+Tunggu hingga proses build selesai dan aplikasi berhasil dijalankan pada emulator atau perangkat Android yang terhubung.
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+### Mengatasi Error Unable to Load Script
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+Apabila aplikasi menampilkan pesan kesalahan `Unable to load script`, kemungkinan perangkat Android belum terhubung dengan Metro Bundler.
 
-```sh
-bundle install
+Untuk mengatasinya, pastikan perangkat sudah terhubung melalui USB Debugging, kemudian jalankan perintah:
+
+```bash
+adb reverse tcp:8081 tcp:8081
 ```
 
-Then, and every time you update your native dependencies, run:
+Setelah itu, lakukan reload aplikasi.
 
-```sh
-bundle exec pod install
+### Konfigurasi Fabric (New Architecture)
+
+Proyek ini menggunakan React Native New Architecture untuk mengaktifkan dukungan Fabric.
+
+Pengaturan tersebut terdapat pada file:
+
+```text
+android/gradle.properties
 ```
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+Pastikan konfigurasi berikut tersedia:
 
-```sh
-# Using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
+```properties
+newArchEnabled=true
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+Dengan konfigurasi tersebut, aplikasi menggunakan arsitektur baru React Native yang mendukung Fabric dan TurboModules.
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+### Struktur Direktori Proyek
 
-## Step 3: Modify your app
+```text
+TugasWebViewFabric/
+│
+├── android/                   # Konfigurasi native Android
+├── ios/                       # Konfigurasi native iOS
+├── MIT_App_Inventor_Tugas2/   # Proyek MIT App Inventor
+├── __tests__/                 # Berkas pengujian aplikasi
+│
+├── App.tsx                    # Implementasi utama WebView
+├── app.json                   # Konfigurasi aplikasi
+├── package.json               # Dependency dan script proyek
+├── package-lock.json          # Versi dependency yang terkunci
+├── tsconfig.json              # Konfigurasi TypeScript
+├── babel.config.js             # Konfigurasi Babel
+├── metro.config.js             # Konfigurasi Metro Bundler
+├── jest.config.js              # Konfigurasi Jest
+└── README.md                   # Dokumentasi proyek
+```
 
-Now that you have successfully run the app, let's make changes!
+---
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+## Identitas Pengembang
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+**Nama:** Rois Abdul Fatah
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+**Repositori GitHub:**  
+[https://github.com/RoisAbdulFatah/TugasWebViewFabric.git](https://github.com/RoisAbdulFatah/TugasWebViewFabric.git)
 
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+**Mata Kuliah:** Pemrograman Mobile

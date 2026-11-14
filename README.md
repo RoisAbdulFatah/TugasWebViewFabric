@@ -18,6 +18,14 @@ Terdapat dua implementasi menggunakan teknologi pengembangan aplikasi yang berbe
 
 Tugas ini merupakan pengembangan aplikasi Android sederhana menggunakan platform MIT App Inventor. Fitur utama aplikasi memanfaatkan komponen **WebViewer** untuk membuka dan menampilkan halaman website secara langsung melalui aplikasi.
 
+**Desain di MIT App Inventor (Designer)**
+
+<img src="Screenshots/MIT-App-Inventor.jpeg" alt="Desain Tugas 2 di MIT App Inventor" width="700">
+
+**Tampilan di HP**
+
+<img src="Screenshots/.jpeg" alt="Tampilan Tugas 2 di HP" width="300">
+
 ### Cara Membuka Proyek
 
 1. Akses [MIT App Inventor](https://ai2.appinventor.mit.edu/).
@@ -36,6 +44,10 @@ Tugas ini merupakan pengembangan aplikasi Android sederhana menggunakan platform
 Pada tugas ini, aplikasi dikembangkan menggunakan **React Native CLI** dengan mengaktifkan New Architecture yang mendukung sistem rendering Fabric.
 
 Aplikasi memanfaatkan library `react-native-webview` untuk menampilkan halaman login portal akademik Universitas Langlangbuana (UNLA), sehingga pengguna dapat mengakses portal tersebut langsung dari aplikasi Android.
+
+**Tampilan**
+
+<img src="Screenshots/Fabric-Web-View.jpeg" alt="Desain Tugas 2 di MIT App Inventor" width="400">
 
 ### Fitur Aplikasi
 

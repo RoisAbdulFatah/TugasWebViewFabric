@@ -24,7 +24,7 @@ Tugas ini merupakan pengembangan aplikasi Android sederhana menggunakan platform
 
 **Tampilan di HP**
 
-<img src="Screenshots/.jpeg" alt="Tampilan Tugas 2 di HP" width="300">
+<img src="Screenshots/Tampilan-MIT-Inventor.jpeg" alt="Tampilan Tugas 2 di HP" width="300">
 
 ### Cara Membuka Proyek
 
